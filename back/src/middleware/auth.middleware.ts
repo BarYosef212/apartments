@@ -9,7 +9,6 @@ const JWT_SECRET = process.env.JWT_SECRET || '';
 export function requireAdmin(req: AuthRequest, res: Response, next: NextFunction) {
   try {
     const authHeader = req.headers.authorization;
-    console.log("Auth Header:", req.headers); // --- IGNORE ---
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ message: 'Missing or invalid Authorization header' });
     }
