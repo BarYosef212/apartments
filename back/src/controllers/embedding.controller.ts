@@ -12,10 +12,8 @@ export class EmbeddingController {
   private async getLLM() {
     if (!EmbeddingController.llm) {
       if (!EmbeddingController.ollamaModule) {
-        console.log("Loading Ollama module...");
         EmbeddingController.ollamaModule = await import("@langchain/ollama");
       }
-      console.log("Initializing Ollama LLM...");
       EmbeddingController.llm = new EmbeddingController.ollamaModule.Ollama({ model: "gemma2" });
     }
     return EmbeddingController.llm;
@@ -24,10 +22,8 @@ export class EmbeddingController {
   private async getPipeline() {
     if (!EmbeddingController.pipe) {
       if (!EmbeddingController.transformersModule) {
-        console.log("Loading transformers module...");
         EmbeddingController.transformersModule = await import('@xenova/transformers');
       }
-      console.log("Loading embedding model (Xenova/multilingual-e5-base)...");
       EmbeddingController.pipe = await EmbeddingController.transformersModule.pipeline('feature-extraction', 'Xenova/multilingual-e5-base', {
         quantized: true,
       });
