@@ -30,7 +30,6 @@ export class AuthController {
   async createAdminUser(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
-      console.log(email, password);
 
       if (!email || !password) {
         return res.status(400).json({ message: CONS.DETAILS_REQUIRED });
