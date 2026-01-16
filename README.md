@@ -243,16 +243,6 @@ The application uses JWT tokens for authentication:
 - Both projects have separate `tsconfig.json` files
 - UI components are built with Radix UI for accessibility
 
-## 📄 License
-
-[Add your license information here]
-
-## 👥 Contributors
-
-[Add contributor information here]
-
-## 🤝 Contributing
-
 [Add contribution guidelines here]
 
 ---
